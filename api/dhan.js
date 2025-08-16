@@ -3,7 +3,8 @@ export default async function handler(req, res) {
     const { symbol } = req.query;  
     const stockSymbol = symbol || "TCS";
 
-    const response = await fetch(`https://api.dhan.co/marketfeed/price?symbol=${stockSymbol}`, {
+    const response = await fetch(`https://api.dhan.co/quotes/intraday?symbol=${stockSymbol}`, {
+
       headers: {
         "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzU3NDE3NjI4LCJ0b2tlbkNvbnN1bWVyVHlwZSI6IlNFTEYiLCJ3ZWJob29rVXJsIjoiIiwiZGhhbkNsaWVudElkIjoiMTEwODA3NDY0MCJ9.LZtgWMxLOVyLCntDNmnq7ZerC615vVZPBIrCfa4Rax5Kv2Xpcw0vfsDOhAmv7TzJA7aH0FJqj3qAmwXhoXJ9tQ"
       }
